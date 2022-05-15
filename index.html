@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Image to Character Grid</title>
+		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link href="https://bootswatch.com/5/lux/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="stylesheet" type="text/css" href="./main.css">
+
+		<script src="./pixelengine.js"></script>
+		<script src="./engine.js"></script>
+
+		<meta name="description" content="Turn any image (or live camera feed) into a grid of characters">
+		<meta itemprop="name" content="Image to Character Grid">
+		<meta itemprop="description" content="Turn any image (or live camera feed) into a grid of characters">
+		<meta itemprop="image" content="image1200-630.png">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Image to Character Grid">
+		<meta name="twitter:description" content="Turn any image (or live camera feed) into a grid of characters">
+		<meta name="twitter:image:src" content="image1200-630.png">
+		<meta property="og:title" content="Image to Character Grid">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="image1200-630.png">
+		<meta property="og:description" content="Turn any image (or live camera feed) into a grid of characters">
+	</head>
+	
+	<body>
+		<div class="container-fluid">
+
+			<video id="video" controls width="10" height="10"></video>
+			<img crossOrigin="" src="" id="image"/>
+			<canvas></canvas>
+
+			
+			<div class="row pt-2">
+				<div class="col-md-4 col-sm-12">
+					<h1 class="text-center">Image to Character Grid</h1>
+					<p>
+						Images on digital screens are displayed as a grid of pixels.
+						The pixel is the smallest bit of optical information providing brightness and color information.
+					</p>
+					<p>
+						So what can be used as pixel? Printable characters is one of many answers!
+					</p>
+					<p>
+						Provide an image file below or the Start/Stop Camera button to use your device's camera:
+					</p>
+
+					<div class="row">
+						<div class="col d-grid">
+							<label class="btn btn-primary">
+								<i class="fa fa-file-image"></i>
+							    <span>Select File</span>
+							    <input type="file" accept="image/*" class="form-control" id="file_input" hidden/>
+							</label>
+						</div>
+						<div class="col-auto">
+							or
+						</div>
+						<div class="col d-grid">
+							<button class="btn btn-primary" data-plays="0" id="camera_toggle">
+								<i class="fa fa-video"></i>
+								<span>Start Camera</span>
+							</button> 
+						</div>
+					</div>
+
+					<div class="row mt-5">
+						<h4>Options</h4>
+						<div class="mb-3">
+							<label for="charsetInput" class="form-label">Character set (smallest to biggest)</label>
+							<input type="text" class="form-control" id="charsetInput">
+							<p class="text-muted">
+								Suggestions:
+								<ul class="text-muted">
+									<li><b>Default set</b>  .:-=+*#%@</li>
+									<li><b>Extended set</b>  .^,:;Il!i><~+_-?][}{1)(|\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$</li>
+									<li><b>To see colors better</b>  ■</li>
+								</ul>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-8 col-sm-12">
+					<p id="output"></p>
+				</div>
+			</div>
+			
+		</div>
+
+		<footer class="footer">
+		  <div class="container-fluid">
+		    <p class="text-muted text-end p-0 m-0">
+		    	Made with <i class="fa fa-heart text-danger"></i> by Anastasios Pikridas 2017 - 2020
+		    </p>
+		  </div>
+		</footer>
+	</body>
+</html>
