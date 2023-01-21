@@ -10,6 +10,10 @@ video, canvas, #image {
     border-radius: 10px;
 }
 
+a {
+	text-decoration: none;
+}
+
 #output {
 	line-height: 10px;
 	font-size:10px;
