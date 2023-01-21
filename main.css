@@ -6,6 +6,10 @@ video, canvas, #image {
 	display: none;
 }
 
+.form-switch .form-check-input {
+    border-radius: 10px;
+}
+
 #output {
 	line-height: 10px;
 	font-size:10px;
@@ -25,6 +29,14 @@ b {
 	font-weight: bold;
 }
 
-#output > span {
+#output.dark-bg > span {
 	background: #444;
+}
+
+#output.monochrome > span {
+	color: #444 !important;
+}
+
+#output.dark-bg.monochrome > span {
+	color: #ddd !important;
 }

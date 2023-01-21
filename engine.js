@@ -11,6 +11,9 @@ let cameraBtn = undefined;
 let imgInput = undefined;
 let charOutput = undefined;
 let charsetInput = undefined;
+let darkBgInput = undefined;
+let coloredCharsInput = undefined;
+
 
 let engine = undefined;
 
@@ -22,9 +25,13 @@ window.onload = () => {
 	imgInput = document.getElementById('file_input');
 	charOutput = document.getElementById('output');
 	charsetInput = document.getElementById('charsetInput');
+	darkBgInput = document.getElementById('dark-bgInput');
+	coloredCharsInput = document.getElementById('colored-charsInput');
 
 	charsetInput.value = chars.split("").reverse().join("");
 	charsetInput.addEventListener('input', e => setCharset(e.target.value));
+	darkBgInput.addEventListener('change', e => charOutput.classList.toggle('dark-bg'));
+	coloredCharsInput.addEventListener('change', e => charOutput.classList.toggle('monochrome'));
 
 	initCamera();
 	initPhoto();

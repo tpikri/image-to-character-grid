@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<link href="https://bootswatch.com/5/lux/bootstrap.min.css" rel="stylesheet">
+		<link href="./bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<link rel="stylesheet" type="text/css" href="./main.css">
 
@@ -24,6 +24,7 @@
 		<meta property="og:type" content="website">
 		<meta property="og:image" content="image1200-630.png">
 		<meta property="og:description" content="Turn any image (or live camera feed) into a grid of characters">
+		<meta name="author" content="Anastasios Pikridas">
 	</head>
 	
 	<body>
@@ -39,13 +40,13 @@
 					<h1 class="text-center">Image to Character Grid</h1>
 					<p>
 						Images on digital screens are displayed as a grid of pixels.
-						The pixel is the smallest bit of optical information providing brightness and color information.
+						The pixel is the smallest bit of optical information providing brightness and color.
 					</p>
 					<p>
-						So what can be used as pixel? Printable characters is one of many answers!
+						So what can be used as a pixel? Printable characters is one of the answers!
 					</p>
 					<p>
-						Provide an image file below or the Start/Stop Camera button to use your device's camera:
+						Provide an image file below or press the Start/Stop Camera button to use your device's camera:
 					</p>
 
 					<div class="row">
@@ -69,12 +70,25 @@
 
 					<div class="row mt-5">
 						<h4>Options</h4>
-						<div class="mb-3">
+
+						<div class="mb-2">
+							<div class="form-check form-switch form-check-inline">
+								<input class="form-check-input" type="checkbox" id="dark-bgInput" checked>
+								<label class="form-check-label" for="dark-bgInput">Dark background</label>
+							</div>
+
+							<div class="form-check form-switch form-check-inline">
+								<input class="form-check-input" type="checkbox" id="colored-charsInput" checked>
+								<label class="form-check-label" for="colored-charsInput">Colored characters</label>
+							</div>
+						</div>
+
+						<div>
 							<label for="charsetInput" class="form-label">Character set (smallest to biggest)</label>
 							<input type="text" class="form-control" id="charsetInput">
-							<p class="text-muted">
+							<p class="text-muted small">
 								Suggestions:
-								<ul class="text-muted">
+								<ul class="text-muted small">
 									<li><b>Default set</b>  .:-=+*#%@</li>
 									<li><b>Extended set</b>  .^,:;Il!i><~+_-?][}{1)(|\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$</li>
 									<li><b>To see colors better</b>  ■</li>
@@ -85,7 +99,7 @@
 				</div>
 
 				<div class="col-md-8 col-sm-12">
-					<p id="output"></p>
+					<p id="output" class="dark-bg"></p>
 				</div>
 			</div>
 			
